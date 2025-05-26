@@ -80,13 +80,13 @@ export function BreakfastSettings({ onTimeChange }: BreakfastSettingsProps) {
                   <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-600">
                     <Clock className="h-6 w-6 text-white" />
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Breakfast Time</h2>
-                  <p className="text-gray-600 dark:text-gray-400 mt-1">Set your ideal breakfast time</p>
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">早餐时间设置</h2>
+                  <p className="text-gray-600 dark:text-gray-400 mt-1">设置您理想的早餐时间</p>
                 </div>
 
                 {/* Current Time Display */}
                 <div className="text-center p-4 mb-6 rounded-lg bg-gray-50 dark:bg-gray-800">
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Current setting</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">当前设置</p>
                   <p className="text-xl font-semibold text-gray-900 dark:text-white">
                     {formatBreakfastTime(currentTime.hour, currentTime.minute)}
                   </p>
@@ -98,7 +98,7 @@ export function BreakfastSettings({ onTimeChange }: BreakfastSettingsProps) {
                     {/* Hour Picker */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Hour
+                        小时
                       </label>
                       <select
                         value={tempHour}
@@ -107,7 +107,7 @@ export function BreakfastSettings({ onTimeChange }: BreakfastSettingsProps) {
                       >
                         {Array.from({ length: 24 }, (_, i) => (
                           <option key={i} value={i}>
-                            {i === 0 ? '12 AM' : i <= 11 ? `${i} AM` : i === 12 ? '12 PM' : `${i - 12} PM`}
+                            {i === 0 ? '12 上午' : i <= 11 ? `${i} 上午` : i === 12 ? '12 下午' : `${i - 12} 下午`}
                           </option>
                         ))}
                       </select>
@@ -116,7 +116,7 @@ export function BreakfastSettings({ onTimeChange }: BreakfastSettingsProps) {
                     {/* Minute Picker */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Minute
+                        分钟
                       </label>
                       <select
                         value={tempMinute}
@@ -134,7 +134,7 @@ export function BreakfastSettings({ onTimeChange }: BreakfastSettingsProps) {
 
                   {/* Preview */}
                   <div className="text-center p-3 rounded-lg bg-blue-50 dark:bg-blue-900/30">
-                    <p className="text-sm text-blue-600 dark:text-blue-400 mb-1">Preview</p>
+                    <p className="text-sm text-blue-600 dark:text-blue-400 mb-1">预览</p>
                     <p className="text-lg font-semibold text-blue-700 dark:text-blue-300">
                       {formatBreakfastTime(tempHour, tempMinute)}
                     </p>
@@ -149,14 +149,14 @@ export function BreakfastSettings({ onTimeChange }: BreakfastSettingsProps) {
                     className="flex-1 h-11"
                   >
                     <X className="h-4 w-4 mr-2" />
-                    Cancel
+                    取消
                   </Button>
                   <Button
                     onClick={handleSave}
                     className="flex-1 h-11 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0"
                   >
                     <Check className="h-4 w-4 mr-2" />
-                    Save
+                    保存
                   </Button>
                 </div>
               </CardContent>

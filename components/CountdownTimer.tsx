@@ -81,7 +81,7 @@ export function CountdownTimer({ breakfastHour, breakfastMinute, onTimeUpdate }:
               "text-center transition-all duration-1000 ease-out",
               isVisible ? "opacity-100 scale-100" : "opacity-90 scale-[0.98]"
             )}>
-              <div className="text-5xl md:text-7xl lg:text-8xl font-black leading-none tracking-tight bg-gradient-to-br from-gray-900 via-gray-700 to-gray-800 dark:from-gray-100 dark:via-gray-300 dark:to-gray-200 bg-clip-text text-transparent">
+              <div className="text-5xl md:text-7xl lg:text-7xl font-black leading-none tracking-tight bg-gradient-to-br from-gray-900 via-gray-700 to-gray-800 dark:from-gray-100 dark:via-gray-300 dark:to-gray-200 bg-clip-text text-transparent">
                 {timeData.rounded.text}
               </div>
             </div>
@@ -112,7 +112,7 @@ export function CountdownTimer({ breakfastHour, breakfastMinute, onTimeUpdate }:
       {/* Breakfast Time Info */}
       <div className="text-center space-y-2">
         <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-          Time until breakfast at
+          距离早餐时间还有
         </p>
         <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">
           {formatBreakfastTime(currentBreakfastTime.hour, currentBreakfastTime.minute)}

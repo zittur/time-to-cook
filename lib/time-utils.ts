@@ -35,19 +35,19 @@ export function getTimeUntilBreakfast(breakfastHour: number = 6, breakfastMinute
   // Format for display
   const formattedExact = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
   
-  // Text representation for rounded time
+  // Text representation for rounded time in Chinese
   let roundedText = '';
   if (roundedHours > 0) {
-    roundedText += `${roundedHours} ${roundedHours === 1 ? 'hour' : 'hours'}`;
+    roundedText += `${roundedHours}小时`;
   }
   
   if (roundedMinutes > 0) {
     if (roundedText.length > 0) roundedText += ' ';
-    roundedText += `${roundedMinutes} minutes`;
+    roundedText += `${roundedMinutes}分钟`;
   }
   
   if (roundedText === '') {
-    roundedText = 'Less than 30 minutes';
+    roundedText = '不到30分钟';
   }
   
   return {
@@ -75,13 +75,13 @@ export function getTimeUntil6AM() {
 }
 
 /**
- * Format breakfast time for display
+ * Format breakfast time for display in Chinese
  */
 export function formatBreakfastTime(hour: number, minute: number = 0): string {
-  const period = hour >= 12 ? 'PM' : 'AM';
+  const period = hour >= 12 ? '下午' : '上午';
   const displayHour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour;
   const displayMinute = minute.toString().padStart(2, '0');
-  return `${displayHour}:${displayMinute} ${period}`;
+  return `${period} ${displayHour}:${displayMinute}`;
 }
 
 /**

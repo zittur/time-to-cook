@@ -52,10 +52,10 @@ export default function Home() {
           {/* Header Section */}
           <div className="text-center space-y-4 mb-8">
             <h1 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-gray-100 dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent leading-tight">
-              Time to Cook
+              早餐倒计时
             </h1>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 font-medium max-w-lg mx-auto">
-              Your elegant countdown to the next delicious meal
+              距离下一顿美味早餐的优雅倒计时
             </p>
           </div>
           
@@ -71,20 +71,20 @@ export default function Home() {
             {timeData && timeData.nextBreakfastTime && (
               <div className="bg-white/50 dark:bg-black/30 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-200/30 dark:border-gray-800/30">
                 <p className="text-sm text-gray-500 dark:text-gray-400 font-medium mb-1">
-                  Next breakfast scheduled for
+                  下一个早餐预约时间：
                 </p>
                 <p className="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  {timeData.nextBreakfastTime.toLocaleDateString('en-US', { 
+                  {timeData.nextBreakfastTime.toLocaleDateString('zh-CN', { 
                     weekday: 'long', 
                     month: 'long', 
                     day: 'numeric' 
-                  })} at {formatBreakfastTime(breakfastTime.hour, breakfastTime.minute)}
+                  })} {formatBreakfastTime(breakfastTime.hour, breakfastTime.minute)}
                 </p>
               </div>
             )}
             
             <p className="text-xs text-gray-400 dark:text-gray-500 font-medium">
-              Click the settings icon to customize your breakfast time
+              点击右上角设置图标可自定义早餐时间
             </p>
           </div>
         </div>
